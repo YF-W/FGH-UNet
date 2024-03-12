@@ -8,6 +8,7 @@
 
 ## **1.Architecture Overview (模型架构概述)**
 
+![image](https://github.com/YF-W/FGH-UNet/assets/66008255/d4cfe817-8ccb-43a3-8357-691d28fba87e)
 
 
 ***FGH-UNet is a "single encoder - single decoder" network structure. The encoder focuses on image feature extraction, using a residual network structure to prevent learning degradation. To enhance semantic information transmission between encoding and decoding, we introduce the BiAPyra HorBlock with global attention and a bidirectional pyramid module for image detail processing. This approach improves feature learning and addresses learning degradation, especially in complex medical images with irregular lesions and textures. Additionally, integrated attention analysis at the intersection of encoding and decoding helps allocate weights to feature images, improving the model's ability to focus on sensitive and meaningful regions during image upsampling.***
