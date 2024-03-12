@@ -8,19 +8,21 @@
 
 ## **1.Architecture Overview (模型架构概述)**
 
-![img](file:///C:\Users\lp2e\Documents\Tencent Files\1066059986\Image\C2C\2416BB7E9A9EE59697FE4FC267F90C32.png)
+![1](https://github.com/YF-W/FGH-UNet/assets/66008255/baf1e9a1-9188-4d1d-a80b-e812acec6bd8)
+
 
 ***FGH-UNet is a "single encoder - single decoder" network structure. The encoder focuses on image feature extraction, using a residual network structure to prevent learning degradation. To enhance semantic information transmission between encoding and decoding, we introduce the BiAPyra HorBlock with global attention and a bidirectional pyramid module for image detail processing. This approach improves feature learning and addresses learning degradation, especially in complex medical images with irregular lesions and textures. Additionally, integrated attention analysis at the intersection of encoding and decoding helps allocate weights to feature images, improving the model's ability to focus on sensitive and meaningful regions during image upsampling.***
 
 ## 2.Module 1：BiAPyra HorBlock
 
-![image-20240312150400823](C:\Users\lp2e\AppData\Roaming\Typora\typora-user-images\image-20240312150400823.png)
+
 
 ***To enhance the advantages of HorBlock in handling image details, the BiAPyra HorBlock introduces a Bidirectional Asymmetric Pyramid model. This network retains a multi-stage architecture and emphasizes extracting image details after processing features with large kernels (7*7) at each stage. In semantic segmentation research, various methods exist for extracting texture details, and the multi-branch processing approach often achieves a balanced and comprehensive analysis of pixel classification through multiple methods.***
 
 ## 3.Module 2:   Reinforcement of attention mechanisms
 
-![image-20240312150445610](C:\Users\lp2e\AppData\Roaming\Typora\typora-user-images\image-20240312150445610.png)
+![2](https://github.com/YF-W/FGH-UNet/assets/66008255/589dc68c-5788-476e-8106-3a3e27b5f27b)
+
 
 ***At the intersection of encoding and decoding, the bottleneck region is filled with rich feature tensors, making it a crucial area in the entire network. The PS-CJ module can simultaneously consider both global context and local details, enhancing the understanding of image semantics. This module is designed to fully learn, absorb, and refine all key features of the network.***
 
